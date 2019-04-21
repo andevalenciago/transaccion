@@ -26,7 +26,7 @@ public class methods {
 public  Map mapeo(String Ruta)
 {
     try {
-        reader = new BufferedReader(new FileReader(Ruta) );  //le entrego el archivo a leer al br creado.
+        reader = new BufferedReader(new FileReader(Ruta) );  //le entrego el archivo a leer al BR creado.
         String LineaActual = reader.readLine();
         SimpleDateFormat formato_fecha = new SimpleDateFormat("dd-MM-yyyy");
 
@@ -35,7 +35,7 @@ public  Map mapeo(String Ruta)
 
             lineas = LineaActual.split(",");
 
-            setMonto_total(getMonto_total() + Integer.parseInt(lineas[1]));
+            setMonto_total(getMonto_total() + Integer.parseInt(lineas[1]));//monto total
 
 
 // suma enero
@@ -54,9 +54,9 @@ public  Map mapeo(String Ruta)
             if(montos_cat.get(lineas[2])==null)
             {
                 montos_cat.put(lineas[2].toString(), Integer.parseInt(lineas[1]));
-            }else if (montos_cat.get(lineas[2]) < 0) {
+            }else if (montos_cat.get(lineas[2]) < 0) // El gasto se expresa en números negativos
 
-
+            {
 
                     setMaximo_gasto(montos_cat.get(lineas[2]) + Integer.parseInt(lineas[1]));
                     setCaeg_max_gasto(lineas[2]);
